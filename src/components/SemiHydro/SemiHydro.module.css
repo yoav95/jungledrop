@@ -5,9 +5,9 @@
 .section {
   direction: rtl;
   padding: var(--section-padding);
-  background: var(--color-background-section);
+  background: transparent;
   text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  border-top: none;
 }
 
 /* ========================= */

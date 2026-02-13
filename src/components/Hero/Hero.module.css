@@ -51,7 +51,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  transform: scale(1.3);
+  transform: scale(1.29);
 }
 
 .heroContent {
@@ -114,7 +114,30 @@
   margin-right: auto;
 }
 
-/* CTA Button */
+/* CTA Button - with border pulse animation */
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: none;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2), 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    border-color: white;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2), 0 0 12px 0 rgba(255, 255, 255, 0.25);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background: none
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: white;
+  }
+}
+
 .cta {
   display: inline-flex;
   align-items: center;
@@ -122,26 +145,96 @@
   padding: 1rem 2.8rem;
   font-size: 1.15rem;
   font-weight: 600;
-  border: none;
-  background: var(--color-primary);
+  border: 2px solid rgba(255, 255, 255, 0);
+  /* background: var(--color-primary); */
   color: #fff;
   border-radius: var(--radius-md);
   cursor: pointer;
   text-decoration: none;
   transition: background var(--transition-fast),
               transform var(--transition-fast),
-              box-shadow var(--transition-fast);
-  box-shadow: 0 4px 16px rgba(59, 127, 59, 0.35);
+              box-shadow var(--transition-fast),
+              color var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.35);
+  position: relative;
+  border:1px solid white;
 }
 
 .cta:hover {
-  background: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(59, 127, 59, 0.5);
+  background: white;
+  color: #1a1a1a;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+  animation: borderPulse 1.2s ease-in-out infinite, gradientShift 3s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: background 0.3s ease-in-out 0s, 
+              color 0.3s ease-in-out 0.15s,
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
 }
 
 .cta:active {
-  transform: translateY(0);
+  transform: translateY(-1px) scale(1.03);
+}
+
+/* ========================= */
+/* Instagram Button          */
+/* ========================= */
+
+@keyframes floatBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(193, 53, 132, 0.4), 0 0 20px rgba(193, 53, 132, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(193, 53, 132, 0.6), 0 0 40px rgba(193, 53, 132, 0.3);
+  }
+}
+
+.instagramButton {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  border: none;
+  box-shadow: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  animation: floatBounce 3s ease-in-out infinite;
+}
+
+.instagramButton:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: none;
+  animation: none;
+}
+
+.instagramButton:active {
+  transform: scale(1.05);
+}
+
+.instagramButton svg {
+  transition: transform var(--transition-fast);
+}
+
+.instagramButton:hover svg {
+  transform: rotate(-8deg);
 }
 
 /* ========================= */
@@ -152,6 +245,18 @@
   .hero {
     height: 100svh;
     min-height: 500px;
+  }
+
+  .instagramButton {
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 28px;
+    height: 28px;
+  }
+
+  .instagramButton svg {
+    width: 28px;
+    height: 28px;
   }
 
   .heroContent {

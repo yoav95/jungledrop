@@ -15,9 +15,9 @@ export default function App() {
     <div className={styles.container}>
       <Hero />
       <Features />
-      <ShowerSection />
       <IndoorGardens />
       <SemiHydro />
+      <ShowerSection />
       <Footer />
       <FloatingWhatsApp />
     </div>

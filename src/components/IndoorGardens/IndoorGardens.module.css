@@ -8,17 +8,19 @@
   justify-content: center;
   align-items: center;
   direction: rtl;
-  padding: 7rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
   overflow: hidden;
-  min-height: 80vh;
+  min-height: auto;
 }
 
 /* Background — GPU-accelerated zoom via transform */
 .bgImage {
   position: absolute;
   inset: -10px;
-  /* background: url('/images/bg.jpg') no-repeat center center; */
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.15) 100%),
+    url('/images/sad.jpg') no-repeat center center;
   background-size: cover;
   animation: bgZoom 14s ease-in-out infinite;
   will-change: transform;
@@ -43,11 +45,13 @@
 
 /* Content Card */
 .card {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  max-width: 900px;
   width: 100%;
   padding: 4rem 4.5rem;
+  margin: 3rem;
   border-radius: var(--radius-xl);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -85,10 +89,10 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
   margin: 2.5rem auto 0;
 }
 
