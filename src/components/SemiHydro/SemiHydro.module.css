@@ -1,0 +1,119 @@
+/* ========================= */
+/* Section                   */
+/* ========================= */
+
+.section {
+  direction: rtl;
+  padding: var(--section-padding);
+  background: var(--color-background-section);
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* ========================= */
+/* Title                     */
+/* ========================= */
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-secondary);
+  line-height: 1.35;
+}
+
+/* ========================= */
+/* Description               */
+/* ========================= */
+
+.sectionText {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+/* ========================= */
+/* Card Grid                 */
+/* ========================= */
+
+.cardRow {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* Cards                     */
+/* ========================= */
+
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 4px 18px var(--color-card-shadow);
+  transition: transform var(--transition-medium),
+              box-shadow var(--transition-medium);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px var(--color-card-shadow-hover);
+}
+
+.icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+/* ========================= */
+/* Mobile                    */
+/* ========================= */
+
+@media (max-width: 650px) {
+  .section {
+    padding: var(--section-padding-mobile);
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+
+  .sectionText {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.65;
+  }
+
+  .card {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+}

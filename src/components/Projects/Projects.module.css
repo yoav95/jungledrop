@@ -1,0 +1,123 @@
+/* ========================= */
+/* 📌 Base Section */
+/* ========================= */
+
+.projectsSection {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+  background: #f8faf8;
+}
+
+.projectsContent {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ========================= */
+/* 📌 Title */
+/* ========================= */
+
+.projectsTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2f4f2f;
+}
+
+/* ========================= */
+/* 📌 Rows */
+/* ========================= */
+
+.projectRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ========================= */
+/* 📌 After Column */
+/* ========================= */
+
+.afterColumn {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ========================= */
+/* 📌 Before Column */
+/* ========================= */
+
+.beforeColumn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ========================= */
+/* 📌 Images */
+/* ========================= */
+
+.projectImage {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 14px;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projectImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================= */
+/* 📱 Mobile Optimization */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .projectRow {
+    gap: 1.5rem;
+  }
+
+  .afterColumn {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .projectsSection {
+    padding: 3rem 1rem;
+  }
+
+  .projectsTitle {
+    font-size: 1.8rem;
+  }
+
+  .projectRow {
+    grid-template-columns: 1fr;
+  }
+
+  /* BEFORE appears first on mobile */
+  .beforeColumn {
+    order: -1;
+  }
+
+  .afterColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .projectImage {
+    aspect-ratio: 1/1.1;
+  }
+}

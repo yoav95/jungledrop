@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --color-primary: #3b7f3b;
+  --color-primary-dark: #2f6c2f;
+  --color-primary-light: #e8f5e9;
+  --color-secondary: #2f4f2f;
+  --color-accent: #4caf50;
+  --color-background: #ffffff;
+  --color-background-alt: #f9faf9;
+  --color-background-section: #eef7ee;
+  --color-background-howitworks: #eef9f2;
+  --color-card-bg: #ffffff;
+  --color-card-shadow: rgba(0, 0, 0, 0.06);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.12);
+  --color-text: #2f4f2f;
+  --color-text-muted: #555555;
+  --color-text-light: #777777;
+  --color-badge-text: #ffffff;
+  --color-placeholder: #e9e9e9;
+  --color-border: rgba(0, 0, 0, 0.06);
+  --text-dark: #2f4f2f;
+
+  /* Spacing */
+  --section-padding: 5rem 1.5rem;
+  --section-padding-mobile: 3.5rem 1.2rem;
+  --max-width: 1100px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.35s ease;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Varela Round", sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ========================= */
+/* Scroll Reveal Animations  */
+/* ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ========================= */
+/* Selection Color           */
+/* ========================= */
+
+::selection {
+  background: var(--color-primary-light);
+  color: var(--color-secondary);
+}

@@ -1,0 +1,46 @@
+.section {
+  direction: rtl;
+  padding: 4rem 1rem;
+  background: #f6faf6;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 800px;
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2a4d2a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 1.8rem;
+}
+
+/* -------- Responsive ---------- */
+@media (max-width: 600px) {
+  .content {
+    padding: 2rem 1.2rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}

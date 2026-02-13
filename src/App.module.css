@@ -1,0 +1,239 @@
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: "Varela Round", sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+.container {
+  font-family: "Varela Round", sans-serif;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+/* CTA buttons */
+.cta {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-badge-text);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Sections */
+.features {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.productsSection {
+  padding: 4rem 1rem;
+  background: var(--color-background-alt);
+  text-align: center;
+}
+
+.semiHydro {
+  padding: 4rem 1rem;
+  background: var(--color-background-section);
+  text-align: center;
+  margin-top: 3rem;
+  border-top: 1px solid #d8e8d8;
+}
+
+.howItWorks {
+  padding: 4rem 1rem;
+  background: var(--color-background-howitworks);
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background: var(--color-card-bg);
+  border-radius: 15px;
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--color-card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--color-card-shadow-hover);
+}
+
+.cardRow,
+.grid,
+.stepsGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-primary);
+  color: var(--color-badge-text);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.productName {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Section Titles and Text */
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--color-secondary);
+}
+
+.sectionText {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  color: var(--color-text-muted);
+}
+
+/* Step Cards */
+.stepCard {
+  background: var(--color-card-bg);
+  border-radius: 15px;
+  padding: 1.7rem;
+  box-shadow: 0 4px 12px var(--color-card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--color-card-shadow-hover);
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-badge-text);
+  font-weight: bold;
+  margin: 0 auto 1rem;
+  font-size: 1.2rem;
+}
+
+.stepTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.stepDescription {
+  opacity: 0.85;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Projects Section */
+.projectsSection {
+  width: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.projectsTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.projectsContent {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.projectRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.afterColumn {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.beforeColumn {
+  display: flex;
+}
+
+.placeholder,
+.afterColumn img,
+.beforeColumn img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--color-placeholder);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-placeholder-text);
+  font-weight: 600;
+  user-select: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .projectRow {
+    grid-template-columns: 1fr;
+  }
+
+  .beforeColumn {
+    order: -1;
+  }
+}
