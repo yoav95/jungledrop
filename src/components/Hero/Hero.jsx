@@ -1,9 +1,20 @@
 import styles from './Hero.module.css'
 import Logo from './logo5.svg?react';
+import videoSrc from '../../assets/sunrise.mp4?url';
 
 function Hero() {
   return (
     <header className={styles.hero}>
+      <video
+        className={styles.videoBackground}
+        autoPlay
+        muted
+        playsInline
+      >
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <div className={styles.heroContent}>
         <div className={styles.logoWrap}>
           <Logo aria-label="JungleDrop לוגו" />

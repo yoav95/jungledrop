@@ -18,7 +18,7 @@
 .bgImage {
   position: absolute;
   inset: -10px;
-  background: url('/images/bg.jpg') no-repeat center center;
+  /* background: url('/images/bg.jpg') no-repeat center center; */
   background-size: cover;
   animation: bgZoom 14s ease-in-out infinite;
   will-change: transform;
