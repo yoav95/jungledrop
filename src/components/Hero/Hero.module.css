@@ -51,7 +51,6 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  transform: scale(1.29);
 }
 
 .heroContent {
@@ -62,7 +61,7 @@
   padding: 3rem 3.5rem;
   max-width: 820px;
   width: 90%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-radius: var(--radius-xl);
@@ -114,67 +113,63 @@
   margin-right: auto;
 }
 
-/* CTA Button - with border pulse animation */
-@keyframes borderPulse {
+/* CTA Button - Clean modern design */
+@keyframes buttonGlow {
   0%, 100% {
-    border-color: none;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2), 0 0 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
   }
   50% {
-    border-color: white;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2), 0 0 12px 0 rgba(255, 255, 255, 0.25);
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background: none
-  }
-  50% {
-    background: white;
-  }
-  100% {
-    background: white;
+    box-shadow: 0 4px 30px rgba(76, 175, 80, 0.6);
   }
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 2.8rem;
-  font-size: 1.15rem;
-  font-weight: 600;
-  border: 2px solid rgba(255, 255, 255, 0);
-  /* background: var(--color-primary); */
+  padding: 1.1rem 3.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #fff;
-  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
   text-decoration: none;
-  transition: background var(--transition-fast),
-              transform var(--transition-fast),
-              box-shadow var(--transition-fast),
-              color var(--transition-fast);
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.35);
   position: relative;
-  border:1px solid white;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(46, 125, 50, 0.6);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .cta:hover {
-  background: white;
-  color: #1a1a1a;
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
-  animation: borderPulse 1.2s ease-in-out infinite, gradientShift 3s ease-in-out infinite;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  transition: background 0.3s ease-in-out 0s, 
-              color 0.3s ease-in-out 0.15s,
-              transform var(--transition-fast),
-              box-shadow var(--transition-fast);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 35px rgba(46, 125, 50, 0.8);
 }
 
 .cta:active {
-  transform: translateY(-1px) scale(1.03);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.5);
 }
 
 /* ========================= */
@@ -214,27 +209,28 @@
   text-decoration: none;
   border: none;
   box-shadow: none;
-  transition: all var(--transition-fast);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: pointer;
   animation: floatBounce 3s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .instagramButton:hover {
-  transform: scale(1.2) rotate(5deg);
-  box-shadow: none;
+  transform: scale(1.25) translateY(-2px);
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
   animation: none;
 }
 
 .instagramButton:active {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .instagramButton svg {
-  transition: transform var(--transition-fast);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .instagramButton:hover svg {
-  transform: rotate(-8deg);
+  transform: rotate(8deg) scale(1.05);
 }
 
 /* ========================= */

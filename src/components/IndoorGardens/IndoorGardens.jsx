@@ -13,13 +13,10 @@ const IndoorGardens = () => {
 
   return (
     <section className={styles.section}>
-      <div className={styles.bgImage} aria-hidden="true" />
-
       <div className={styles.inner}>
-        <div className={`${styles.card} reveal`}>
-          <h2 className={styles.sectionTitle}>עיצוב צמחים בחלל פנימי</h2>
+        <h2 className={`${styles.sectionTitle} reveal`}>עיצוב צמחים בחלל פנימי</h2>
 
-          <div className={styles.textBlock}>
+        <div className={styles.textBlock}>
             <p className={styles.sectionText}>
               הבית שלך הוא המקום שלך להירגע, להיות משם ולהתחבר למה שחשוב לך.
               צמחים בחלל פנימי זה לא רק ביוטיפול — זה שינוי מלא של האנרגיה של החלל.
@@ -36,10 +33,10 @@ const IndoorGardens = () => {
               כל עיצוב משלב וניקה טבעית, צבע בחיים וחיבור לטבע — גם כשאנחנו בתוך
               ארבע קירות. צמחים הם לא רק דקורציה, הם חלק מחיים יותר בריאים, שלמים וטבעיים.
             </p>
-          </div>
+        </div>
 
-          {/* Gallery */}
-          <div className={styles.gallery}>
+        {/* Gallery */}
+        <div className={styles.gallery}>
             {galleryImages.map((img, i) => (
               <div
                 key={i}
@@ -57,7 +54,6 @@ const IndoorGardens = () => {
                 />
               </div>
             ))}
-          </div>
         </div>
       </div>
 

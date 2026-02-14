@@ -7,7 +7,7 @@
   padding: var(--section-padding);
   background: transparent;
   text-align: center;
-  border-top: none;
+  border-top: 1px solid rgba(126, 207, 126, 0.3);
 }
 
 /* ========================= */
@@ -51,19 +51,18 @@
 /* ========================= */
 
 .card {
-  background: var(--color-card-bg);
-  border-radius: var(--radius-lg);
-  padding: 2.2rem 1.8rem;
-  box-shadow: 0 4px 18px var(--color-card-shadow);
-  transition: transform var(--transition-medium),
-              box-shadow var(--transition-medium);
+  background: transparent;
+  border-radius: 0;
+  padding: 1.5rem 1rem;
+  box-shadow: none;
+  transition: transform var(--transition-medium);
   text-align: center;
-  border: 1px solid var(--color-border);
+  border: none;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px var(--color-card-shadow-hover);
+  transform: translateY(-4px);
+  box-shadow: none;
 }
 
 .icon {

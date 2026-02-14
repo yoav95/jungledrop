@@ -60,23 +60,39 @@
   opacity: 1;
 }
 
-.whatsappLink {
+.whatsappLink,
+.instagramLink {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #25d366;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
   padding: 0.6rem 1.2rem;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(37, 211, 102, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all var(--transition-fast);
+}
+
+.whatsappLink {
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.3);
 }
 
 .whatsappLink:hover {
   background: rgba(37, 211, 102, 0.1);
   border-color: #25d366;
+}
+
+.instagramLink {
+  color: #e4405f;
+  border-color: rgba(228, 64, 95, 0.3);
+  margin-top: 0.75rem;
+}
+
+.instagramLink:hover {
+  background: rgba(228, 64, 95, 0.1);
+  border-color: #e4405f;
 }
 
 .bottom {

@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: var(--section-padding);
   text-align: center;
+  border-top: 1px solid rgba(126, 207, 126, 0.3);
 }
 
 /* Section title */

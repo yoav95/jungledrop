@@ -1,63 +1,17 @@
 import styles from './Hero.module.css'
 import Logo from './logo5.svg?react';
-import videoSrc from '../../assets/sunrise.mp4?url';
-import { useRef, useEffect, useState } from 'react';
+import videoSrc from '../../assets/sunrise2.mp4?url';
 
 function Hero() {
-  const videoRef = useRef(null);
-  const [isLoopingEnd, setIsLoopingEnd] = useState(false);
-  const [direction, setDirection] = useState(1);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    let lastUpdateTime = 0;
-
-    const handleTimeUpdate = () => {
-      const now = Date.now();
-      if (now - lastUpdateTime < 16) return; // ~60fps
-      lastUpdateTime = now;
-
-      const duration = video.duration;
-      const loopStart = duration - 4;
-
-      if (video.currentTime >= loopStart) {
-        if (!isLoopingEnd) {
-          setIsLoopingEnd(true);
-        }
-
-        const stepSize = 0.008;
-
-        if (direction === 1) {
-          video.currentTime += stepSize;
-          if (video.currentTime >= duration - 0.05) {
-            setDirection(-1);
-          }
-        } else {
-          video.currentTime -= stepSize;
-          if (video.currentTime <= loopStart + 0.05) {
-            setDirection(1);
-          }
-        }
-      }
-    };
-
-    video.addEventListener('timeupdate', handleTimeUpdate);
-
-    return () => {
-      video.removeEventListener('timeupdate', handleTimeUpdate);
-    };
-  }, [isLoopingEnd, direction]);
-
   return (
     <header className={styles.hero}>
       <video
-        ref={videoRef}
         className={styles.videoBackground}
         autoPlay
         muted
+        loop
         playsInline
+        preload="auto"
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
@@ -75,8 +29,7 @@ function Hero() {
         </h1>
 
         <p className={styles.subtitle}>
-          אנחנו כאן כדי להכניס את הטבע האקזוטי פנימה, עם צמחייה חיה
-          שמנקה ומחייה את האוויר בביתכם.
+          עיצוב וגידול צמחים לבית ולחוץ — כולל מערכות סמי-הידרו
         </p>
 
         <a

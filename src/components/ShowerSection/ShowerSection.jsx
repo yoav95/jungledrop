@@ -13,13 +13,10 @@ const ShowerSection = () => {
 
   return (
     <section className={styles.section}>
-      <div className={styles.bgImage} aria-hidden="true" />
-
       <div className={styles.inner}>
-        <div className={`${styles.card} reveal`}>
-          <h2 className={styles.sectionTitle}>המקלחת היא מקור של רוגע</h2>
+        <h2 className={`${styles.sectionTitle} reveal`}>המקלחת היא מקור של רוגע</h2>
 
-          <div className={styles.textBlock}>
+        <div className={styles.textBlock}>
             <p className={styles.sectionText}>
               אחרי יום ארוך, עמוס, מלא גירויים או פשוט שגרתי — המקלחת היא אחד
               המקומות היחידים שבהם אנחנו באמת יכולים לעצור. זה מרחב קטן שבו
@@ -37,10 +34,26 @@ const ShowerSection = () => {
               החום, האדים, הטיפות — כולם מתערבבים עם הירוק ויוצרים תחושה של
               מקלט טרופי קטן. חדר המקלחת הופך למרחב שמטעין אותנו מחדש.
             </p>
-          </div>
 
-          {/* Gallery */}
-          <div className={styles.gallery}>
+            {/* Concrete Benefits */}
+            <div className={styles.benefits}>
+              <div className={styles.benefit}>
+                <span className={styles.benefitIcon}>💧</span>
+                <span>מפחית לחות ועובש</span>
+              </div>
+              <div className={styles.benefit}>
+                <span className={styles.benefitIcon}>🪟</span>
+                <span>מתאים במיוחד לחדרי רחצה ללא חלון</span>
+              </div>
+              <div className={styles.benefit}>
+                <span className={styles.benefitIcon}>🧘</span>
+                <span>הופך את המקלחת לחלל רגוע יותר</span>
+              </div>
+            </div>
+        </div>
+
+        {/* Gallery */}
+        <div className={styles.gallery}>
             {galleryImages.map((img, i) => (
               <div
                 key={i}
@@ -58,7 +71,6 @@ const ShowerSection = () => {
                 />
               </div>
             ))}
-          </div>
         </div>
       </div>
 
